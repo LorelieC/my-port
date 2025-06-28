@@ -8,15 +8,34 @@ import Lorelie5 from "./assets/Lorelie5.jpg";
 import Lorelie7 from "./assets/Lorelie7.JPG";
 
 export default function AboutPage() {
-  const [expandedItem, setExpandedItem] = useState(null);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [introImageIndex, setIntroImageIndex] = useState(0);
+  const [portfolioImageIndexes, setPortfolioImageIndexes] = useState([0, 0, 0, 0]);
 
-  const handlePortfolioClick = (index) => {
-    setExpandedItem(index);
+  const introImages = [Lorelie5, Lorelie4, Lorelie3];
+
+  const handleIntroNext = () => {
+    setIntroImageIndex((prevIndex) => (prevIndex + 1) % introImages.length);
   };
 
-  const handleClosePopup = () => {
-    setExpandedItem(null);
+  const handleIntroPrev = () => {
+    setIntroImageIndex((prevIndex) => (prevIndex - 1 + introImages.length) % introImages.length);
+  };
+
+  const handlePortfolioNext = (index) => {
+    setPortfolioImageIndexes((prevIndexes) => {
+      const newIndexes = [...prevIndexes];
+      newIndexes[index] = (newIndexes[index] + 1) % portfolioItems[index].gallery.length;
+      return newIndexes;
+    });
+  };
+
+  const handlePortfolioPrev = (index) => {
+    setPortfolioImageIndexes((prevIndexes) => {
+      const newIndexes = [...prevIndexes];
+      newIndexes[index] = (newIndexes[index] - 1 + portfolioItems[index].gallery.length) % portfolioItems[index].gallery.length;
+      return newIndexes;
+    });
   };
 
   const handleInputChange = (e) => {
@@ -36,22 +55,18 @@ export default function AboutPage() {
   const portfolioItems = [
     {
       title: "UI Wireframes",
-      mainImg: Lorelie2,
       gallery: [Lorelie2, Lorelie7],
     },
     {
       title: "VHDL Projects",
-      mainImg: Lorelie3,
       gallery: [Lorelie3, Lorelie7],
     },
     {
       title: "Portfolio Website",
-      mainImg: Lorelie4,
       gallery: [Lorelie4],
     },
     {
       title: "Capstone Showcase",
-      mainImg: Lorelie5,
       gallery: [Lorelie5, Lorelie1],
     },
   ];
@@ -94,8 +109,24 @@ export default function AboutPage() {
             technical and user-focused projects.
           </p>
         </div>
-        <div className="image">
-          <img src={Lorelie5} alt="Lorelie random pic" />
+        <div className="image" style={{ position: "relative", width: "100%", maxWidth: "400px" }}>
+          <img
+            src={introImages[introImageIndex]}
+            alt="Lorelie slideshow pic"
+            style={{ width: "100%", height: "550px", objectFit: "cover", borderRadius: "8px" }}
+          />
+          <button
+            onClick={handleIntroPrev}
+            style={{ position: "absolute", top: "50%", left: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+          >
+            ❮
+          </button>
+          <button
+            onClick={handleIntroNext}
+            style={{ position: "absolute", top: "50%", right: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+          >
+            ❯
+          </button>
         </div>
       </section>
 
@@ -108,35 +139,28 @@ export default function AboutPage() {
 
       <section className="portfolio">
         {portfolioItems.map((item, index) => (
-          <div
-            key={index}
-            className="portfolio-item"
-            onClick={() => handlePortfolioClick(index)}
-          >
-            <img src={item.mainImg} alt={item.title} />
+          <div key={index} className="portfolio-item" style={{ position: "relative", maxWidth: "300px" }}>
+            <img
+              src={item.gallery[portfolioImageIndexes[index]]}
+              alt={item.title}
+              style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "8px" }}
+            />
+            <button
+              onClick={() => handlePortfolioPrev(index)}
+              style={{ position: "absolute", top: "50%", left: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+            >
+              ❮
+            </button>
+            <button
+              onClick={() => handlePortfolioNext(index)}
+              style={{ position: "absolute", top: "50%", right: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+            >
+              ❯
+            </button>
             <p>{item.title}</p>
           </div>
         ))}
       </section>
-
-      {expandedItem !== null && (
-        <div className="popup-overlay" onClick={handleClosePopup}>
-          <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-            <h3>{portfolioItems[expandedItem].title}</h3>
-            <div className="popup-gallery">
-              {portfolioItems[expandedItem].gallery.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`${portfolioItems[expandedItem].title} ${i + 1}`}
-                  style={{ width: "120px", height: "120px", objectFit: "cover", margin: "5px" }}
-                />
-              ))}
-            </div>
-            <button onClick={handleClosePopup} className="cta-button">Close</button>
-          </div>
-        </div>
-      )}
 
       <section className="testimonial">
         <blockquote>
