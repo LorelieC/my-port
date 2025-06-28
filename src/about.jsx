@@ -6,12 +6,16 @@ import Lorelie3 from "./assets/Lorelie3.jpg";
 import Lorelie4 from "./assets/Lorelie4.jpg";
 import Lorelie5 from "./assets/Lorelie5.jpg";
 import Lorelie7 from "./assets/Lorelie7.JPG";
+import Cert1 from "./assets/cert1.png";
+import Cert2 from "./assets/cert2.png";
+import Cert3 from "./assets/cert3.png";
 
 export default function AboutPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [introImageIndex, setIntroImageIndex] = useState(0);
   const [portfolioImageIndexes, setPortfolioImageIndexes] = useState([0, 0, 0, 0]);
-
+  const certImages = [Cert1, Cert2, Cert3];
+  const [certIndex, setCertIndex] = useState(0);
   const introImages = [Lorelie5, Lorelie4, Lorelie3];
 
   const handleIntroNext = () => {
@@ -36,6 +40,14 @@ export default function AboutPage() {
       newIndexes[index] = (newIndexes[index] - 1 + portfolioItems[index].gallery.length) % portfolioItems[index].gallery.length;
       return newIndexes;
     });
+  };
+
+  const handleCertNext = () => {
+    setCertIndex((prevIndex) => (prevIndex + 1) % certImages.length);
+  };
+
+  const handleCertPrev = () => {
+    setCertIndex((prevIndex) => (prevIndex - 1 + certImages.length) % certImages.length);
   };
 
   const handleInputChange = (e) => {
@@ -74,19 +86,19 @@ export default function AboutPage() {
   return (
     <div className="page-container">
       <header className="header">
-        <div className="logo">Lorelie Delcano Canete - Computer Engineering Student</div>
+        <div className="logo">Lorelie Delcano Canete</div>
       </header>
 
       <section className="hero">
         <img className="profile-pic" src={Lorelie1} alt="Lorelie Canete" />
         <h1>Computer Engineer Meets Innovative Future</h1>
-        <a 
-          href="https://www.facebook.com/your.facebook.LorelieDelcano" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://www.facebook.com/your.facebook.LorelieDelcano"
+          target="_blank"
+          rel="noopener noreferrer"
           className="cta-button"
         >
-          Let's be friends!
+          Let's connect!
         </a>
       </section>
 
@@ -94,12 +106,12 @@ export default function AboutPage() {
         <div className="text">
           <h2>Hi, I'm Lorelie!</h2>
           <p>
-            I’m passionate about combining technology and creativity to build innovative, 
-            hands-on solutions. With a background in Computer Engineering, I am proficient 
-            in Python, C++, and React, and enjoy working on responsive web apps and full-stack 
+            I’m passionate about combining technology and creativity to build innovative,
+            hands-on solutions. With a background in Computer Engineering, I am proficient
+            in VHDL, Python, C++, and React, and enjoy working on responsive web apps and full-stack
             projects. I also focus on UI/UX design to create intuitive, user-friendly interfaces.
-            As a working student, I am constantly striving to balance my studies and practical 
-            experience, demonstrating dedication and resilience. These experiences showcase my 
+            As a working student, I am constantly striving to balance my studies and practical
+            experience, demonstrating dedication and resilience. These experiences showcase my
             commitment to developing practical, user-centered technology.
           </p>
           <h3>Core Interests</h3>
@@ -117,13 +129,35 @@ export default function AboutPage() {
           />
           <button
             onClick={handleIntroPrev}
-            style={{ position: "absolute", top: "50%", left: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "10px",
+              transform: "translateY(-50%)",
+              background: "transparent",
+              color: "rgba(0,0,0,0.2)",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "24px",
+              fontWeight: "bold",
+            }}
           >
             ❮
           </button>
           <button
             onClick={handleIntroNext}
-            style={{ position: "absolute", top: "50%", right: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+            style={{
+              position: "absolute",
+              top: "50%",
+              right: "10px",
+              transform: "translateY(-50%)",
+              background: "transparent",
+              color: "rgba(0,0,0,0.2)",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "24px",
+              fontWeight: "bold",
+            }}
           >
             ❯
           </button>
@@ -147,19 +181,86 @@ export default function AboutPage() {
             />
             <button
               onClick={() => handlePortfolioPrev(index)}
-              style={{ position: "absolute", top: "50%", left: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "10px",
+                transform: "translateY(-50%)",
+                background: "transparent",
+                color: "rgba(0,0,0,0.2)",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "24px",
+                fontWeight: "bold",
+              }}
             >
               ❮
             </button>
             <button
               onClick={() => handlePortfolioNext(index)}
-              style={{ position: "absolute", top: "50%", right: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}
+              style={{
+                position: "absolute",
+                top: "50%",
+                right: "10px",
+                transform: "translateY(-50%)",
+                background: "transparent",
+                color: "rgba(0,0,0,0.2)",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "24px",
+                fontWeight: "bold",
+              }}
             >
               ❯
             </button>
             <p>{item.title}</p>
           </div>
         ))}
+      </section>
+
+      <section className="cert-library">
+        <h2>Certificates & Achievements</h2>
+        <div style={{ position: "relative", maxWidth: "950px", margin: "0 auto" }}>
+          <img
+            src={certImages[certIndex]}
+            alt={`Certificate ${certIndex + 1}`}
+            style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "8px" }}
+          />
+          <button
+            onClick={handleCertPrev}
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "10px",
+              transform: "translateY(-30%)",
+              background: "transparent",
+              color: "rgba(0,0,0,0.2)",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "24px",
+              fontWeight: "bold",
+            }}
+          >
+            ❮
+          </button>
+          <button
+            onClick={handleCertNext}
+            style={{
+              position: "absolute",
+              top: "50%",
+              right: "10px",
+              transform: "translateY(-50%)",
+              background: "transparent",
+              color: "rgba(0,0,0,0.2)",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "24px",
+              fontWeight: "bold",
+            }}
+          >
+            ❯
+          </button>
+        </div>
       </section>
 
       <section className="testimonial">
@@ -207,3 +308,4 @@ export default function AboutPage() {
     </div>
   );
 }
+  
