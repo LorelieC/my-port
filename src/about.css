@@ -16,8 +16,8 @@ html, body {
   font-family: 'Arimo', Arial, sans-serif;
   cursor: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%233b2f2f" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 2l20 10-20 10V2z"/></svg>') 4 4, auto;
   background-image: 
-  linear-gradient(to right, rgba(60, 40, 120, 0.25) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(60, 40, 120, 0.25) 1px, transparent 1px);
+    linear-gradient(to right, rgba(60, 40, 120, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(60, 40, 120, 0.25) 1px, transparent 1px);
   background-size: 32px 32px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -28,12 +28,27 @@ body {
   color: #000;
 }
 
+.binary-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+#binary-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
 .page-container {
-  width: 110%;
+  width: 90%;
   max-width: 1300px;
   margin: auto;
   padding: 20px;
-  color: #333;
   position: relative;
   z-index: 1;
   background: rgba(158, 152, 152, 0.04); 
@@ -114,7 +129,6 @@ body {
   font-style: italic;
   border-left: 4px solid #ccc;
   border-right: 4px solid #ccc;
-
 }
 
 .testimonial cite {
@@ -196,5 +210,62 @@ body {
   padding: 25px 0;
   font-size: 14px;
   color: #777;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eee;.skills-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.skills-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f9fb;
+}
+
+.skills-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.skill-card {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+.skill-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  min-height: 60px;
+}
+
+.skill-doc {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #0077cc;
+}
 }
