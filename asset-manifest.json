@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7913d5e0.css",
+    "main.js": "/static/js/main.29f80a65.js",
+    "static/media/IMG_3837.jpg": "/static/media/IMG_3837.bd029d274a43a2800a4b.jpg",
+    "static/media/IMG_3840.jpg": "/static/media/IMG_3840.105008b504b1c6024335.jpg",
+    "static/media/IMG_3836.jpg": "/static/media/IMG_3836.7585ac525965616348d5.jpg",
+    "static/media/IMG_3839.jpg": "/static/media/IMG_3839.2ddaf0f561e0b4d09c3a.jpg",
+    "static/media/IMG_3838.jpg": "/static/media/IMG_3838.483ca6da1f390793582f.jpg",
+    "static/media/IMG_3843.jpg": "/static/media/IMG_3843.7f796e660513ed780276.jpg",
+    "static/media/IMG_3873.jpg": "/static/media/IMG_3873.9cb381a5429b7a026951.jpg",
+    "static/media/IMG_3889.jpg": "/static/media/IMG_3889.e36cac48f8b2a0329627.jpg",
+    "static/media/IMG_3856.jpg": "/static/media/IMG_3856.c7bb1678f52e5c28af8e.jpg",
+    "static/media/IMG_4762.jpg": "/static/media/IMG_4762.09046fa36ac1632a8d5e.jpg",
+    "static/media/IMG_3855.jpg": "/static/media/IMG_3855.7f1fad7f83b38e3db11c.jpg",
+    "static/media/IMG_3854.jpg": "/static/media/IMG_3854.f5f7aad4cbd5485842ce.jpg",
+    "static/media/Lorelie1.jpg": "/static/media/Lorelie1.edab00cd83c901165faf.jpg",
+    "static/media/IMG_3870.jpg": "/static/media/IMG_3870.4b9cf958c34152bfb1bf.jpg",
+    "static/media/IMG_4754.jpg": "/static/media/IMG_4754.8b66c3966684f6825d24.jpg",
+    "static/media/IMG_4753.jpg": "/static/media/IMG_4753.09f4925fcfc3ad3ea547.jpg",
+    "static/media/IMG_3869.jpg": "/static/media/IMG_3869.833dd2e303b2ec3aa9b4.jpg",
+    "static/media/IMG_4776.jpg": "/static/media/IMG_4776.aea5d615395e036e0bf8.jpg",
+    "static/media/IMG_3871.jpg": "/static/media/IMG_3871.ebb7fec5808050a51b6e.jpg",
+    "static/media/IMG_4845.jpg": "/static/media/IMG_4845.d53f2c8573c1f62ca1ba.jpg",
+    "static/media/IMG_4777.jpg": "/static/media/IMG_4777.72825e0b2ce797ca233f.jpg",
+    "static/media/Lorelie4.jpg": "/static/media/Lorelie4.0f4933a2e8f0fa3e81c1.jpg",
+    "static/media/Lorelie5.jpg": "/static/media/Lorelie5.4da29faa38c2c07b743c.jpg",
+    "static/media/Lorelie7.JPG": "/static/media/Lorelie7.88460b9c90ba44ea7ff3.JPG",
+    "static/media/Lorelie3.jpg": "/static/media/Lorelie3.838c150b6752627840ad.jpg",
+    "static/media/Lorelie2.jpg": "/static/media/Lorelie2.12bae8c18de9adef0351.jpg",
+    "static/media/ArsenicaTrial-MediumItalic.ttf": "/static/media/ArsenicaTrial-MediumItalic.08027f1cf14813331e03.ttf",
+    "static/media/cert1.png": "/static/media/cert1.77d434b1340984298667.png",
+    "static/media/cert2.png": "/static/media/cert2.4f9619a9916ab7544b24.png",
+    "static/media/cert3.png": "/static/media/cert3.2eccce2a1806b1b89d91.png",
+    "index.html": "/index.html",
+    "main.7913d5e0.css.map": "/static/css/main.7913d5e0.css.map",
+    "main.29f80a65.js.map": "/static/js/main.29f80a65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7913d5e0.css",
+    "static/js/main.29f80a65.js"
+  ]
+}
