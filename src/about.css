@@ -16,9 +16,9 @@ html, body {
   font-family: 'Arimo', Arial, sans-serif;
   cursor: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%233b2f2f" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 2l20 10-20 10V2z"/></svg>') 4 4, auto;
   background-image: 
-    linear-gradient(to right, rgba(17, 14, 26, 0.2) 1px, transparent 5px),
-    linear-gradient(to bottom, rgba(160, 132, 232, 0.2) 1px, transparent 5px);
-  background-size: 40px 40px;
+  linear-gradient(to right, rgba(60, 40, 120, 0.25) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(60, 40, 120, 0.25) 1px, transparent 1px);
+  background-size: 32px 32px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -29,13 +29,16 @@ body {
 }
 
 .page-container {
-  width: 100%;
-  max-width: 900px;
+  width: 110%;
+  max-width: 1300px;
   margin: auto;
   padding: 20px;
   color: #333;
   position: relative;
   z-index: 1;
+  background: rgba(158, 152, 152, 0.04); 
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  border-radius: 12px;
 }
 
 .header {
@@ -58,14 +61,15 @@ body {
 }
 
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .cta-button {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 10px 24px;
   background-color: #000;
   color: white;
@@ -103,10 +107,14 @@ body {
 .testimonial {
   background-color: #f9f9f9;
   padding: 40px 30px;
-  margin: 40px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 160px;
   text-align: center;
   font-style: italic;
   border-left: 4px solid #ccc;
+  border-right: 4px solid #ccc;
+
 }
 
 .testimonial cite {

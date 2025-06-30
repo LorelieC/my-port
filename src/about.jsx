@@ -93,7 +93,7 @@ export default function AboutPage() {
         <img className="profile-pic" src={Lorelie1} alt="Lorelie Canete" />
         <h1>Computer Engineer Meets Innovative Future</h1>
         <a
-          href="https://www.facebook.com/your.facebook.LorelieDelcano"
+          href="https://www.facebook.com/LorelieDelcano"
           target="_blank"
           rel="noopener noreferrer"
           className="cta-button"
@@ -220,11 +220,11 @@ export default function AboutPage() {
 
       <section className="cert-library">
         <h2>Certificates & Achievements</h2>
-        <div style={{ position: "relative", maxWidth: "950px", margin: "0 auto" }}>
+        <div style={{ position: "relative", maxWidth: "1100px", margin: "0 auto" }}>
           <img
             src={certImages[certIndex]}
             alt={`Certificate ${certIndex + 1}`}
-            style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "8px" }}
+            style={{ width: "100%", height: "600px", objectFit: "cover", borderRadius: "8px" }}
           />
           <button
             onClick={handleCertPrev}
