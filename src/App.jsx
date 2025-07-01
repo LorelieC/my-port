@@ -49,7 +49,7 @@ function LandingPage() {
 }
 export default function App() {
   return (
-    <Router>
+    <Router basename="/my-port">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
