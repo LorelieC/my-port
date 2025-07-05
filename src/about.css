@@ -269,3 +269,40 @@ body {
   color: #0077cc;
 }
 }
+
+/* Split name css */
+
+.split-name-header {
+  padding: 100px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.name-row {
+  font-size: 250px;
+  font-weight: 700;
+  font-family: 'Pathway Gothic One', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+
+.top-name {
+  text-align: left;
+  width: 100%;
+  margin-left: 80px;
+}
+
+.bottom-name {
+  text-align: right;
+  width: 100%;
+  margin-right: 80px;
+}
+
+@media (max-width: 600px) {
+  .name-row {
+    font-size: 48px;
+  }
+}

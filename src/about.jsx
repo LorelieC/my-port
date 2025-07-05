@@ -238,8 +238,9 @@ export default function AboutPage() {
         <canvas ref={binaryCanvasRef} id="binary-canvas"></canvas>
       </div>
       <div className="page-container">
-        <header className="header">
-          <div className="logo">Lorelie Delcano Canete</div>
+        <header className="header split-name-header">
+          <div className="name-row top-name">LORELIE</div>
+          <div className="name-row bottom-name">CANETE</div>
         </header>
         <section className="hero">
           <img className="profile-pic" src={Lorelie1} alt="Lorelie Canete" />
