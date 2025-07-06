@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./about.css";
 import Lorelie1 from "./assets/Lorelie1.jpg";
 import Lorelie2 from "./assets/Lorelie2.jpg";
@@ -239,10 +240,10 @@ export default function AboutPage() {
       </div>
       <div className="page-container">
         <nav className="inline-nav">
-          <a href="#home" className="nav-button">
+          <Link to="/" className="nav-button">
             Home <span className="arrow"></span>
-          </a>
-          <a href="#resume" className="nav-button">
+          </Link>
+          <a href="/dummy.pdf" className="nav-button" download>
             Resume <span className="arrow"></span>
           </a>
         </nav>
