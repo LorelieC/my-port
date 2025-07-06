@@ -289,25 +289,54 @@ export default function AboutPage() {
           </div>
         </section>
         <section className="skills-section">
-  <h2>My Skills & Focus Areas</h2>
-  <div className="skills-grid">
-    {skills.map((skill, index) => (
-      <div key={index} className="skill-card" onClick={() => toggleSkill(index)}>
-        <h3>{skill.title}</h3>
-        <p>{skill.description}</p>
-        {activeSkill === index && (
-          <div className="skill-doc">
-            {skill.doc ? (
-              <a href={skill.doc} target="_blank" rel="noopener noreferrer">📎 View Document</a>
-            ) : (
-              <span>No document available.</span>
-            )}
+          <h2>My Skills & Focus Areas</h2>
+          <div className="skills-list">
+            {skills.map((skill, index) => {
+              // ✨ Subtle shading steps
+              const headerShade = 85 - index * 1.2; // softer gray
+              const bodyShade = 95 - index * 1.2;   // softer lavender
+
+              return (
+                <div
+                  key={index}
+                  className={`skill-card-row ${index % 2 === 0 ? "align-left" : "align-right"}`}
+                >
+                  <div
+                    className="skill-card"
+                    onClick={() => toggleSkill(index)}
+                    style={{
+                      backgroundColor: `hsl(270, 100%, ${bodyShade}%)`,
+                    }}
+                  >
+                    <div
+                      className="skill-header"
+                      style={{
+                        backgroundColor: `hsl(0, 0%, ${headerShade}%)`,
+                        borderRadius: "8px 8px 0 0",
+                      }}
+                    >
+                      <h3 style={{ margin: 0 }}>{skill.title}</h3>
+                    </div>
+                    <div className="skill-body" style={{ padding: "20px" }}>
+                      <p>{skill.description}</p>
+                      {activeSkill === index && (
+                        <div className="skill-doc">
+                          {skill.doc ? (
+                            <a href={skill.doc} target="_blank" rel="noopener noreferrer">
+                              📎 View Document
+                            </a>
+                          ) : (
+                            <span>No document available.</span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        )}
-      </div>
-    ))}
-  </div>
-</section>
+        </section>
         <section className="contact">
           <h2>Let's Connect!</h2>
           <form onSubmit={handleSubmit}>
