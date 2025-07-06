@@ -238,6 +238,15 @@ export default function AboutPage() {
         <canvas ref={binaryCanvasRef} id="binary-canvas"></canvas>
       </div>
       <div className="page-container">
+        <nav className="inline-nav">
+          <a href="#home" className="nav-button">
+            Home <span className="arrow"></span>
+          </a>
+          <a href="#resume" className="nav-button">
+            Resume <span className="arrow"></span>
+          </a>
+        </nav>
+
         <header className="header split-name-header">
           <div className="name-row top-name">LORELIE</div>
           <div className="name-row bottom-name">CANETE</div>
@@ -288,55 +297,60 @@ export default function AboutPage() {
             <button onClick={handleCertNext} style={{ position: "absolute", top: "50%", right: "10px", transform: "translateY(-50%)", background: "transparent", color: "rgba(0,0,0,0.2)", border: "none", cursor: "pointer", fontSize: "24px", fontWeight: "bold" }}>❯</button>
           </div>
         </section>
-        <section className="skills-section">
-          <h2>My Skills & Focus Areas</h2>
-          <div className="skills-list">
-            {skills.map((skill, index) => {
-              // ✨ Subtle shading steps
-              const headerShade = 85 - index * 1.2; // softer gray
-              const bodyShade = 95 - index * 1.2;   // softer lavender
+<section className="skills-section">
+  <h2>My Skills & Focus Areas</h2>
+  <div className="skills-list">
+    {skills.map((skill, index) => {
+      // Slightly darker starting point
+      const headerBase = 230;
+      const bodyBase = 225;
 
-              return (
-                <div
-                  key={index}
-                  className={`skill-card-row ${index % 2 === 0 ? "align-left" : "align-right"}`}
-                >
-                  <div
-                    className="skill-card"
-                    onClick={() => toggleSkill(index)}
-                    style={{
-                      backgroundColor: `hsl(270, 100%, ${bodyShade}%)`,
-                    }}
-                  >
-                    <div
-                      className="skill-header"
-                      style={{
-                        backgroundColor: `hsl(0, 0%, ${headerShade}%)`,
-                        borderRadius: "8px 8px 0 0",
-                      }}
-                    >
-                      <h3 style={{ margin: 0 }}>{skill.title}</h3>
-                    </div>
-                    <div className="skill-body" style={{ padding: "20px" }}>
-                      <p>{skill.description}</p>
-                      {activeSkill === index && (
-                        <div className="skill-doc">
-                          {skill.doc ? (
-                            <a href={skill.doc} target="_blank" rel="noopener noreferrer">
-                              📎 View Document
-                            </a>
-                          ) : (
-                            <span>No document available.</span>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+      const shadeStep = 3;
+
+      const headerShade = headerBase - index * shadeStep;
+      const bodyShade = bodyBase - index * shadeStep;
+
+      const clamp = (v, min = 210) => Math.max(v, min);
+
+      return (
+        <div
+          key={index}
+          className="skill-card"
+          onClick={() => toggleSkill(index)}
+        >
+          <div
+            className="skill-header"
+            style={{
+              backgroundColor: `rgb(${clamp(headerShade)}, ${clamp(headerShade)}, ${clamp(headerShade)})`,
+              color: '#000' 
+            }}
+          >
+            {skill.title}
           </div>
-        </section>
+          <div
+            className="skill-body"
+            style={{
+              backgroundColor: `rgb(${clamp(bodyShade)}, ${clamp(bodyShade - 5)}, 255)`
+            }}
+          >
+            <p>{skill.description}</p>
+            {activeSkill === index && (
+              <div className="skill-doc">
+                {skill.doc ? (
+                  <a href={skill.doc} target="_blank" rel="noopener noreferrer">
+                    📎 View Document
+                  </a>
+                ) : (
+                  <span>No document available.</span>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
         <section className="contact">
           <h2>Let's Connect!</h2>
           <form onSubmit={handleSubmit}>
