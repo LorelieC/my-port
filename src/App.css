@@ -31,12 +31,12 @@ body, html, #root {
   width: 100vw;
   height: 100vh;
   background-image:
-    linear-gradient(to right, rgba(160, 132, 232, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(160, 132, 232, 0.15) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(220, 220, 220, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 220, 220, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.03s ease;
   z-index: 0;
 }
 
@@ -71,7 +71,7 @@ body, html, #root {
   font-family: 'Arsenica Trial', serif;
   font-weight: 500;
   font-style: italic;
-  font-size: 3.2em;
+  font-size: 40rem;
   letter-spacing: 1px;
   margin: 0;
   user-select: none;
@@ -178,12 +178,10 @@ body, html, #root {
   transform: rotate(-45deg) translateX(4px);
 }
 
-/* Screens with short height (e.g., < 700px) */
 @media (max-height: 700px) {
   .container {
-    margin: 40px auto 0; /* 👈 reduced top margin from 100px to 40px */
+    margin: 60px auto 0; 
   }
-
   .name {
     font-size: 2em;
   }
@@ -207,7 +205,6 @@ body, html, #root {
   }
 }
 
-/* Mobile devices (≤768px) */
 @media (max-width: 768px) {
   .container {
     margin: 60px auto 0;

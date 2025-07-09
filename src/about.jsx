@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import "./about.css";
 
 import Lorelie1 from "./assets/Lorelie1.jpg";
-import Lorelie2 from "./assets/Lorelie2.jpg";
 import Lorelie3 from "./assets/Lorelie3.jpg";
 import Lorelie4 from "./assets/Lorelie4.jpg";
 import Lorelie5 from "./assets/Lorelie5.jpg";
-import Lorelie7 from "./assets/Lorelie7.JPG";
 
 import Cert1 from "./assets/cert1.png";
 import Cert2 from "./assets/cert2.png";
@@ -32,9 +30,18 @@ import IMG_3837 from "./assets/IMG_3837.jpg";
 import IMG_3838 from "./assets/IMG_3838.jpg";
 import IMG_3839 from "./assets/IMG_3839.jpg";
 import IMG_3840 from "./assets/IMG_3840.jpg";
-import IMG_3843 from "./assets/IMG_3843.jpg";
+import one from "./assets/one.png";
+import two from "./assets/two.png";
+import three from "./assets/three.png";
+import four from "./assets/four.png";
+import five from "./assets/five.png";
+import LAD from "./assets/LAD.JPEG";
+import IMG_4353 from "./assets/IMG_4353.jpg";
+import IMG_4354 from "./assets/IMG_4354.jpg";
 
-import ResumePDF from "./assets/dummy.pdf";
+
+
+import ResumePDF from "./assets/Resume.pdf";
 
 export default function AboutPage() {
   const portfolioItems = [
@@ -42,10 +49,9 @@ export default function AboutPage() {
     { title: "Research NOAH", gallery: [IMG_3855, IMG_3856, IMG_3854] },
     { title: "Trailone – Software Design Project", gallery: [IMG_3889] },
     { title: "BCD‑7 Segments", gallery: [IMG_3873, IMG_3871, IMG_3870, IMG_3869] },
-    { title: "ComArch Project (ALU)", gallery: [IMG_3840, IMG_3836, IMG_3838, IMG_3837] },
-    { title: "VHDL Project", gallery: [IMG_3873, IMG_3871, IMG_3870, IMG_3869] },
-    { title: "Logic and Circuit Project", gallery: [IMG_3873, IMG_3871, IMG_3870, IMG_3869] },
-    { title: "Data Structure Project", gallery: [IMG_3873, IMG_3871, IMG_3870, IMG_3869] }
+    { title: "ComArch Project (ALU)", gallery: [IMG_3840, IMG_3836, IMG_3838, IMG_3837, IMG_3839] },
+    { title: "VHDL Project", gallery: [one, two, three, four, five] },
+    { title: "Logic and Circuit Project", gallery: [IMG_4353, IMG_4354, LAD] },
   ];
 
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -105,7 +111,7 @@ export default function AboutPage() {
   },
   {
     title: "Cybersecurity & Penetration Testing",
-    description: "Skilled in ethical hacking and system protection using Linux-based systems, TryHackMe labs, and command-line tools like Sudo for privilege escalation. Experienced in secure coding, threat modeling, and vulnerability assessment with a user-focused approach to digital defense."
+    description: "Skilled in ethical hacking and system protection using Linux-based systems, TryHackMe labs, and command-line tools like Sudo for privilege escalation. Experienced in secure coding, and vulnerability assessment with a user-focused approach to digital defense."
   },
   {
     title: "2D AutoCAD",
