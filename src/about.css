@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Pathway+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=DM+Sans:wght@400&display=swap');
+
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 html, body {
@@ -13,7 +18,7 @@ html, body {
   background: linear-gradient(to bottom right, #f5f5dc, #e0d6f5);
   background-attachment: fixed;
   color: #3b2f2f;
-  font-family: 'Arimo', Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   cursor: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%233b2f2f" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 2l20 10-20 10V2z"/></svg>') 4 4, auto;
   background-image: 
     linear-gradient(to right, rgba(60, 40, 120, 0.25) 1px, transparent 1px),
@@ -73,6 +78,11 @@ body {
 .hero {
   text-align: center;
   margin: 50px 0 30px;
+}
+.hero-title {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 2.5rem; 
+  text-align: center;
 }
 
 .profile-pic {
@@ -140,14 +150,33 @@ body {
 
 .portfolio {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  margin: 50px 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
 }
 
+@media (max-width: 1024px) {
+  .portfolio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .portfolio-item {
+  width: 250px;
+  height: 330px; 
   text-align: center;
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background:transparent;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 .portfolio-item:hover {
@@ -156,16 +185,16 @@ body {
 
 .portfolio-item img {
   width: 100%;
-  max-width: 100%;
   height: 220px;
   object-fit: cover;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
 }
 
 .portfolio-item p {
   margin-top: 10px;
   font-weight: bold;
+  font-size: 1rem;
+  color: #222;
 }
 
 .contact {
@@ -213,13 +242,12 @@ body {
   border-top: 1px solid #eee;.skills-section {
   padding: 40px 20px;
   text-align: center;
-}
+  }
 .skills-section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
-  background-color: #f8f9fb;
+  background: #f8f9fb;
 }
-
 .skills-section h2 {
   font-size: 32px;
   margin-bottom: 30px;
@@ -227,26 +255,44 @@ body {
 }
 
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   gap: 30px;
+  justify-items: center;
+  padding: 0 10px;
+}
+
+@media (max-width: 960px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .skill-card {
-  width: 300px;
-  background-color: #fff;
+  width: 100%;
+  max-width: 320px;
+  height: 260px;
+  background: #fff;
   border: 1px solid #e4e4e4;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.05);
   padding: 30px 20px;
   text-align: center;
-  transition: transform 0.2s ease;
   cursor: pointer;
+  transition: transform 0.2s;
 }
+.skill-card:hover { transform: translateY(-6px); }
 
-.skill-card:hover {
-  transform: translateY(-6px);
+.skill-card:nth-child(3n + 2),
+.skill-card:nth-child(3n + 3) { margin-top: 20px; }
+@media (max-width: 960px) {
+  .skill-card:nth-child(3n + 2),
+  .skill-card:nth-child(3n + 3) { margin-top: 0; }
 }
 
 .skill-card h3 {
@@ -255,17 +301,213 @@ body {
   color: #333;
   margin-bottom: 15px;
 }
-
 .skill-card p {
   font-size: 14px;
   color: #666;
-  margin-bottom: 10px;
   min-height: 60px;
+  margin-bottom: 10px;
+}
+}
+
+.split-name-header {
+  padding: 60px 0 60px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.name-row {
+  font-size: 250px;
+  font-weight: 700;
+  font-family: 'Pathway Gothic One', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+
+.top-name {
+  text-align: left;
+  width: 100%;
+  margin-left: 80px;
+}
+
+.bottom-name {
+  text-align: right;
+  width: 100%;
+  margin-right: 80px;
+}
+
+@media (max-width: 600px) {
+  .name-row {
+    font-size: 48px;
+  }
+}
+
+.split-name-header {
+  padding: 100px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background: linear-gradient(
+    to bottom right,
+    #E6E6FA 0%,
+    rgba(230, 230, 250, 0.7) 100%
+  );
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.skills-list {
+  column-count: 3; /* Change to 3 columns */
+  column-gap: 2rem; /* Optional: reduce gap for better spacing */
+  padding: 1rem;
+}
+
+.skill-card:nth-child(5) {
+  margin-top: 40px;
+}
+
+.skill-card {
+  break-inside: avoid;
+  margin-bottom: 2.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: 90%; /* Slightly narrower */
+  min-height: 300px; /* Increase height */
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+.skill-header {
+  height: 80px; /* Increase header height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.skill-body {
+  padding: 20px;
+  font-size: 14px;
+  color: #333;
+  height: 220px; /* You can adjust this to fine-tune body height */
+  overflow-y: auto; /* Scroll if content exceeds */
 }
 
 .skill-doc {
   margin-top: 10px;
-  font-size: 14px;
   color: #0077cc;
 }
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+  .skills-list {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-list {
+    column-count: 1;
+  }
+
+  .skill-card {
+    width: 100%;
+  }
+
+  .skill-card:nth-child(5) {
+    margin-top: 0px;
+  }
+}
+
+.inline-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.nav-button {
+  background: transparent;
+  color: #3b2f2f;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid transparent;
+  box-shadow: none;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+  font-family: 'Arimo', Arial, sans-serif;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-button:hover {
+  color: #a084e8;
+  border-color: #a084e8;
+  background: rgba(160, 132, 232, 0.1);
+}
+
+.nav-button .arrow {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  border-right: 3px solid #a084e8;
+  border-bottom: 3px solid #a084e8;
+  transform: rotate(-45deg);
+  margin-left: 5px;
+  margin-top: 2px;
+  transition: transform 0.2s;
+}
+
+.nav-button:hover .arrow {
+  transform: rotate(-45deg) translateX(4px);
+}
+.pdf-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+.pdf-modal object {
+  width: 80vw;
+  height: 90vh;
+  border: 4px solid white;
+  border-radius: 8px;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.background-grid {
+  background-image: linear-gradient(to right, rgba(139, 69, 19, 1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(139, 69, 19, 1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
 }
