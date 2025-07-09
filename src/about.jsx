@@ -111,7 +111,7 @@ export default function AboutPage() {
   },
   {
     title: "Cybersecurity & Penetration Testing",
-    description: "Skilled in ethical hacking and system protection using Linux-based systems, TryHackMe labs, and command-line tools like Sudo for privilege escalation. Experienced in secure coding, and vulnerability assessment with a user-focused approach to digital defense."
+    description: "Skilled in ethical hacking and system protection using Linux-based systems, TryHackMe labs, and command-line tools like Sudo. Experienced in secure coding, and vulnerability assessment with a user-focused approach to digital defense."
   },
   {
     title: "2D AutoCAD",
