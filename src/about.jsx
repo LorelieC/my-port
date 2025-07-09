@@ -57,6 +57,25 @@ export default function AboutPage() {
 
   const binaryCanvasRef = useRef(null);
 
+  const [gridVisible, setGridVisible] = useState(false);
+  let gridTimeoutId = useRef(null);
+
+  useEffect(() => {
+  const handleMouseMove = () => {
+    setGridVisible(true);
+    if (gridTimeoutId.current) clearTimeout(gridTimeoutId.current);
+    gridTimeoutId.current = setTimeout(() => {
+      setGridVisible(false);
+    }, 2000);
+  };
+
+  window.addEventListener("mousemove", handleMouseMove);
+  return () => {
+    window.removeEventListener("mousemove", handleMouseMove);
+    if (gridTimeoutId.current) clearTimeout(gridTimeoutId.current);
+  };
+}, []);
+
   const introImages = [Lorelie5, Lorelie4, Lorelie3];
   const certImages = [Cert1, Cert2, Cert3];
   const skills = [
@@ -221,10 +240,23 @@ export default function AboutPage() {
           </button>
         </nav>
 
-        <header className="header split-name-header">
-          <div className="name-row top-name">LORELIE</div>
-          <div className="name-row bottom-name">CANETE</div>
-        </header>
+      <header className="header split-name-header" style={{ position: "relative", overflow: "hidden" }}>
+        <div
+          className="background-grid"
+          style={{
+            opacity: gridVisible ? 1 : 0,
+            transition: "opacity 0.3s ease",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 0,
+          }}
+        />
+        <div className="name-row top-name" style={{ position: "relative", zIndex: 1 }}>LORELIE</div>
+        <div className="name-row bottom-name" style={{ position: "relative", zIndex: 1 }}>CANETE</div>
+      </header>
 
         <section className="hero">
           <img className="profile-pic" src={Lorelie1} alt="Lorelie Canete" />

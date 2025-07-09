@@ -361,9 +361,13 @@ body {
 }
 
 .skills-list {
-  column-count: 2;
-  column-gap: 4rem;
+  column-count: 3; /* Change to 3 columns */
+  column-gap: 2rem; /* Optional: reduce gap for better spacing */
   padding: 1rem;
+}
+
+.skill-card:nth-child(5) {
+  margin-top: 40px;
 }
 
 .skill-card {
@@ -371,13 +375,10 @@ body {
   margin-bottom: 2.5rem;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: inline-block;
-  width: 100%;
-}
-
-.skill-card:nth-child(4) {
-  margin-top: 40px;
+  width: 90%; /* Slightly narrower */
+  min-height: 300px; /* Increase height */
 }
 
 .skill-card:hover {
@@ -385,7 +386,7 @@ body {
 }
 
 .skill-header {
-  height: 70px;
+  height: 80px; /* Increase header height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -400,6 +401,8 @@ body {
   padding: 20px;
   font-size: 14px;
   color: #333;
+  height: 220px; /* You can adjust this to fine-tune body height */
+  overflow-y: auto; /* Scroll if content exceeds */
 }
 
 .skill-doc {
@@ -407,13 +410,24 @@ body {
   color: #0077cc;
 }
 
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+  .skills-list {
+    column-count: 2;
+  }
+}
+
 @media (max-width: 768px) {
   .skills-list {
     column-count: 1;
   }
 
-  .skill-card:nth-child(4) {
-    margin-top: 0; 
+  .skill-card {
+    width: 100%;
+  }
+
+  .skill-card:nth-child(5) {
+    margin-top: 0px;
   }
 }
 
@@ -491,3 +505,9 @@ body {
   cursor: pointer;
 }
 
+.background-grid {
+  background-image: linear-gradient(to right, rgba(139, 69, 19, 1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(139, 69, 19, 1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
